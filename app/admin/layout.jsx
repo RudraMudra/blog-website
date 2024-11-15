@@ -1,6 +1,6 @@
 "use client";
 
-import AuthProvider, { useAuth } from "@/lib/contexts/AuthContext";
+import AuthProvider from "@/lib/contexts/AuthContext";
 import Sidebar from "./components/Sidebar";
 import { useAdmin } from "@/lib/firebase/admins/read";
 
