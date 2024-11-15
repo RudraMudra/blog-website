@@ -6,9 +6,9 @@ export default async function Page() {
     return (
         <main className="p-10">
             <div className="grid grid-cols-4">
-                {categories?.map((category, key) => (
+                {categories?.map((category, index) => (
                     <div>
-                        <CategoryCard category={category} key={key}/>
+                        <CategoryCard category={category} key={index}/>
                         {/* <p>{category.description}</p> */}
                     </div>
                 ))}

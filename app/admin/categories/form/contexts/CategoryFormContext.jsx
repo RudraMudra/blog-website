@@ -2,7 +2,7 @@
 
 import { getCategory } from "@/lib/firebase/category/read";
 import { createNewCategory, DeleteCategory, updateCategory } from "@/lib/firebase/category/write";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { createContext, useContext, useState } from "react";
 
 const CategoryFormContext = createContext();

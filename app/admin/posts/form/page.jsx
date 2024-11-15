@@ -1,13 +1,13 @@
 "use client"
 
 import { useSearchParams } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, Suspense } from "react";
 import { usePostForm } from "./contexts/PostFormContext";
 import { useCategories } from "@/lib/firebase/category/read";
 import { useAuthors } from "@/lib/firebase/author/read";
 import { RTEField } from "./components/RTE";
 
-export default function Page() {
+function Page() {
     const searchParams = useSearchParams();
     const updatePostId = searchParams.get('id')
 
@@ -153,8 +153,8 @@ function SelectCategoryField() {
             }}
             required>
             <option value="">Select Category</option>
-            {categories && categories?.map((item) => {
-                return <option value={item?.id}>{item?.name}</option>
+            {categories && categories?.map((item,index) => {
+                return <option key={index} value={item?.id}>{item?.name}</option>
             })}
         </select>
     </div>
@@ -179,9 +179,15 @@ function SelectAuthorField() {
             }}
             required>
             <option value="">Select Author</option>
-            {authors && authors?.map((item) => {
-                return <option value={item?.id}>{item?.name}</option>
+            {authors && authors?.map((item,index) => {
+                return <option key={index} value={item?.id}>{item?.name}</option>
             })}
         </select>
     </div>
+}
+
+export default function SuspensePage(){
+    return <Suspense>
+        <Page />
+    </Suspense>
 }

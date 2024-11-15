@@ -2,10 +2,10 @@
 
 import { useSearchParams } from "next/navigation";
 
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { useAuthorForm } from "./contexts/AuthorFormContext";
 
-export default function Page() {
+function Page() {
     const searchParams = useSearchParams();
     const updateAuthorId = searchParams.get('id')
 
@@ -123,4 +123,10 @@ export default function Page() {
             </form>
         </section>
     </main>
+}
+
+export default function SuspensePage(){
+    return <Suspense>
+        <Page />
+    </Suspense>
 }

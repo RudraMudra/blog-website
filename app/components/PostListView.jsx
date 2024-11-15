@@ -11,8 +11,8 @@ export default async function PostListView() {
   return (
     <section className="p-8">
       <div className="grid grid-cols-4 gap-4">
-        {posts?.map((post, key) => {
-          return <PostCard post={post} key={key} />;
+        {posts?.map((post, index) => {
+          return <PostCard post={post} key={index} />;
         })}
       </div>
     </section>

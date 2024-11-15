@@ -2,7 +2,7 @@
 
 import { getAuthor } from "@/lib/firebase/author/read";
 import { createNewAuthor, DeleteAuthor, updateAuthor } from "@/lib/firebase/author/write";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { createContext, useContext, useState } from "react";
 
 const AuthorFormContext = createContext();

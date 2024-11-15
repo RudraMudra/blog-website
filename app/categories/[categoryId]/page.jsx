@@ -12,8 +12,8 @@ export default async function Page({ params }) {
             <CategoryCard categoryId={categoryId} />
         </div>
       <div className="grid grid-cols-4 gap-4">
-        {posts.map((post) => {
-          return <PostCard post={post} key={post.id} />;
+        {posts.map((post,index) => {
+          return <PostCard post={post} key={post.id+index} />;
         })}
       </div>
     </main>

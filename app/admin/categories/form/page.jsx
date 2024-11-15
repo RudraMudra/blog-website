@@ -2,9 +2,9 @@
 
 import { useSearchParams } from "next/navigation";
 import { useCategoryForm } from "./contexts/CategoryFormContext";
-import { useEffect } from "react";
+import { useEffect,Suspense } from "react";
 
-export default function Page() {
+function Page() {
     const searchParams = useSearchParams();
     const updateCategoryId = searchParams.get('id')
 
@@ -122,4 +122,10 @@ export default function Page() {
             </form>
         </section>
     </main>
+}
+
+export default function SuspensePage(){
+    return <Suspense>
+        <Page />
+    </Suspense>
 }
