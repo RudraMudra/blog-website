@@ -48,11 +48,11 @@ export default function PostListView() {
       render: (record) => (
         <Link href={`/admin/posts/form?id=${record?.id}`}>
           <span>
-            <Link href={`/admin/posts/${record.id}`}>
+            {/* <Link href={`/admin/posts/${record.id}`}>
               <Button className="bg-yellow-300" type="dashed">
                 View
               </Button>
-            </Link>
+            </Link> */}
           </span>
           <span style={{ marginLeft: 8 }}>
             <Button type="primary">Edit</Button>

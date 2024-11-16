@@ -2,11 +2,10 @@
 "use client";
 
 import AuthProvider, { useAuth } from "@/lib/contexts/authContext";
-import Sidebar from "./components/Sidebar";
-import { useAdmin } from "@/lib/firebase/admins/read";
 
 import { StickyNote, PersonStanding, NotebookTabs } from "lucide-react";
 import CountCard from "./components/CountCard";
+import { useAdmin } from "@/lib/firebase/admins/read";
 
 function InnerLayout() {
   const { user, isLoading: authIsLoading } = useAuth();
